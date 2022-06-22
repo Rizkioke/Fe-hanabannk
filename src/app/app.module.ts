@@ -1,16 +1,24 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
 import { AppComponent } from './app.component';
 
+// Imported syncfusion sidebar module from navigations package
+import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
+import {CheckboxTreeViewComponent} from './treeview/treeview.component'
+
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, CheckboxTreeViewComponent, HeaderComponent, FooterComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+BrowserModule,
+// Registering EJ2 Sidebar Module
+SidebarModule,
+TreeViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
